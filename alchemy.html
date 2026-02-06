@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Law of Equivalent Exchange | Clement Vexegon</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="icon" href="assets/anime.png">
+
+
+    <style>
+        :root {
+            --primary-red: #e63946;
+            --dark-bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --gold: #d4af37;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
+        }
+
+        /* Transmutation Circle Animation */
+        .transmutation-circle {
+            width: 400px;
+            height: 400px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            z-index: 0;
+            animation: rotate-circle 20s linear infinite;
+            pointer-events: none;
+        }
+
+        .transmutation-circle svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes rotate-circle {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Hero Section */
+        .alchemy-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 6rem 0 4rem;
+            position: relative;
+            border-bottom: 3px solid var(--gold);
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            letter-spacing: 3px;
+        }
+
+        .law-quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ccc;
+            border-left: 4px solid var(--gold);
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        /* Content Cards */
+        .content-section {
+            position: relative;
+            z-index: 1;
+            padding: 4rem 0;
+        }
+
+        .law-card {
+            background: var(--card-bg);
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .law-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .law-card:hover {
+            transform: translateX(10px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .law-card:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+
+        .law-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            right: 2rem;
+            top: 1rem;
+        }
+
+        .law-title {
+            color: var(--gold);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .law-description {
+            color: #bbb;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Alphonse Quote Section */
+        .alphonse-quote {
+            background: linear-gradient(to right, #1a1a1a, #0f0f0f);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid var(--gold);
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .alphonse-quote::before {
+            content: '"';
+            font-size: 8rem;
+            color: var(--gold);
+            opacity: 0.2;
+            position: absolute;
+            top: -2rem;
+            left: 2rem;
+            font-family: Georgia, serif;
+        }
+
+        .quote-text {
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #fff;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-author {
+            color: var(--gold);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Truth Section */
+        .truth-section {
+            background: #000;
+            border: 2px solid var(--primary-red);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .truth-title {
+            color: var(--primary-red);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* Navigation */
+        .navbar-brand {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            border-top: 1px solid #333;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-text {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Transmutation Circle Background -->
+    <div class="transmutation-circle">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" stroke="#d4af37" stroke-width="0.5" fill="none"/>
+            <circle cx="100" cy="100" r="70" stroke="#d4af37" stroke-width="0.5" fill="none"/>
+            <circle cx="100" cy="100" r="50" stroke="#d4af37" stroke-width="0.5" fill="none"/>
+            <line x1="10" y1="100" x2="190" y2="100" stroke="#d4af37" stroke-width="0.5"/>
+            <line x1="100" y1="10" x2="100" y2="190" stroke="#d4af37" stroke-width="0.5"/>
+            <line x1="35" y1="35" x2="165" y2="165" stroke="#d4af37" stroke-width="0.5"/>
+            <line x1="165" y1="35" x2="35" y2="165" stroke="#d4af37" stroke-width="0.5"/>
+            <polygon points="100,30 115,80 100,70 85,80" fill="none" stroke="#d4af37" stroke-width="0.5"/>
+            <polygon points="170,100 120,115 130,100 120,85" fill="none" stroke="#d4af37" stroke-width="0.5"/>
+            <polygon points="100,170 85,120 100,130 115,120" fill="none" stroke="#d4af37" stroke-width="0.5"/>
+            <polygon points="30,100 80,85 70,100 80,115" fill="none" stroke="#d4af37" stroke-width="0.5"/>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-danger" href="#">ClementVexegon<span class="text-white">ANIME</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="btn btn-outline-secondary nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="btn btn-outline-secondary nav-item"><a class="nav-link active" href="alchemy.html">Alchemy Rules</a></li>
+                    <li class="btn btn-outline-secondary nav-item"><a class="nav-link" href="tsukuyomi.html">Infinite Tsukuyomi</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="alchemy-hero">
+        <div class="container text-center">
+            <h1 class="hero-title">THE ALCHEMY CODEX</h1>
+            <p class="law-quote">
+                "Humankind cannot gain anything without first giving something in return.<br>
+                To obtain, something of equal value must be lost."
+            </p>
+            <p class="text-secondary">— The First Law of Alchemy</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container content-section">
+
+        <!-- Alphonse's Teaching -->
+        <div class="alphonse-quote">
+            <p class="quote-text">
+                "That is Alchemy's First Law of Equivalent Exchange. In those days, we really believed that to be the world's one and only truth."
+            </p>
+            <p class="quote-author">— Alphonse Elric</p>
+        </div>
+
+        <!-- The Three Fundamental Laws -->
+        <h2 class="text-center mb-5" style="color: #d4af37; font-size: 2.5rem;">The Three Fundamental Laws</h2>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="law-card">
+                    <span class="law-number">01</span>
+                    <h3 class="law-title">The Law of Equivalent Exchange</h3>
+                    <p class="law-description">
+                        The cornerstone of all alchemical practice. To create, one must destroy. To gain, one must sacrifice.
+                        The fundamental principle states that the energy and matter involved in an alchemical transmutation must
+                        balance perfectly. You cannot create something from nothing, nor can you create something greater than
+                        what you sacrifice. This is the price of power, the balance that keeps the universe in order.
+                    </p>
+                    <p class="law-description mt-3">
+                        <strong style="color: #d4af37;">Example:</strong> To transmute a stone into gold, one must provide equal mass
+                        and molecular composition. The alchemist acts merely as the catalyst, rearranging what already exists.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="law-card">
+                    <span class="law-number">02</span>
+                    <h3 class="law-title">The Law of Natural Providence</h3>
+                    <p class="law-description">
+                        An object or material cannot be transmuted into something with a different base structure. Lead cannot
+                        become diamond. Water cannot become fire. The fundamental nature of matter has its limits, and alchemy
+                        must work within those boundaries. One can rearrange, reshape, and reform, but the essential building
+                        blocks must remain compatible with the desired result.
+                    </p>
+                    <p class="law-description mt-3">
+                        <strong style="color: #d4af37;">Example:</strong> You can transmute coal into diamond (both are carbon),
+                        but you cannot transmute wood into steel without adding the necessary metallic elements.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="law-card">
+                    <span class="law-number">03</span>
+                    <h3 class="law-title">The Law of Conservation of Mass</h3>
+                    <p class="law-description">
+                        Matter cannot be created or destroyed through alchemical transmutation, only transformed. The total mass
+                        before the transmutation must equal the total mass after. This law ensures the universe remains balanced.
+                        Any attempt to violate this principle results in a rebound—the alchemical energy backfires, often with
+                        devastating consequences. This is why human transmutation is strictly forbidden.
+                    </p>
+                    <p class="law-description mt-3">
+                        <strong style="color: #d4af37;">Example:</strong> If you start with 10kg of material, your transmutation
+                        result must also weigh 10kg, distributed across the final products.
+                    </p>
+                </div>
+            </div>
+        </div>
+/
+        <!-- The Forbidden Truth -->
+        <div class="truth-section">
+            <h3 class="truth-title">⚠ THE FORBIDDEN TRANSMUTATION ⚠</h3>
+            <p class="text-center text-light mb-3" style="font-size: 1.2rem;">
+                <strong>Human Transmutation is Absolutely Forbidden</strong>
+            </p>
+            <p class="text-secondary text-center mb-0">
+                The attempt to bring back the dead or create human life violates all three laws simultaneously.
+                The human soul cannot be quantified or exchanged. Those who attempt it pay the ultimate price—losing
+                parts of their own body, their humanity, or their very existence. No equivalent exchange can account
+                for the value of a human soul.
+            </p>
+            <p class="text-danger text-center mt-3 mb-0 fst-italic">
+                "You cannot bring back the dead. That is the truth."
+            </p>
+        </div>
+
+        <!-- Practical Applications -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="law-card">
+                    <h4 class="law-title" style="font-size: 1.4rem;">⚗️ Transmutation Circle</h4>
+                    <p class="law-description">
+                        The geometric pattern that focuses alchemical energy. Without understanding, deconstruction,
+                        and reconstruction, no transmutation is possible. The circle represents the cycle of creation
+                        and serves as the boundary for the alchemical reaction.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="law-card">
+                    <h4 class="law-title" style="font-size: 1.4rem;">🔬 The Alchemist's Mindset</h4>
+                    <p class="law-description">
+                        "To train the mind, first shatter it. To create truth, first destroy your preconceptions.
+                        The greatest alchemists are those who understand that knowledge has a price, and wisdom
+                        requires sacrifice."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clement's Philosophy -->
+        <div class="alphonse-quote mt-5" style="border-color: #e63946;">
+            <p class="quote-text" style="font-size: 1.5rem;">
+                "In this reality, only those who understand Equivalent Exchange can truly shape their world.
+                Nothing is free. Everything demands its price. But those who pay it... become Architects of Reality."
+            </p>
+            <p class="quote-author" style="color: #e63946;">— Clement Vexegon, Reality Architect</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="footer-text mb-2">"One's reality might be another's illusion."</p>
+                    <p class="footer-text mb-0">Understanding requires sacrifice. Knowledge demands equivalent exchange.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-white mb-1">Codified by <span class="fw-bold" style="color: #d4af37;">Clement Vexegon</span></p>
+                    <p class="footer-text mb-0">&copy; 2026 The Alchemy Codex</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
