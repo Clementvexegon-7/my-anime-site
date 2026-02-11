@@ -5,96 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Infinite Tsukuyomi | Clement Vexegon</title>
 
-    <link rel="icon" href="assets/anime.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Custom Styles remain the same */
         :root {
-            --dark-bg: #0f0f0f;
-            --card-bg: #1a1a1a;
-        }
-
-        :root {
-            --primary-red: #<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>e63946;
+            --primary-red: #e63946;  /* The Red of the Sharingan */
+            --dark-bg: #050505;      /* Deepest Black */
+            --card-bg: #121212;      /* Slightly lighter black */
+            --gold-accent: #d4af37;  /* For Alchemy */
         }
 
         body {
             background-color: var(--dark-bg);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
+            color: #e0e0e0;
         }
 
-        /* Hero Section */
+        h1, h2, h3, .navbar-brand {
+            font-family: 'Cinzel', serif; /* Cinematic font */
+            letter-spacing: 1px;
+        }
+
+        /* HERO SECTION: Mature, Dark, Atmospheric */
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1541562232579-512a21360020?q=80&w=1920&auto=format&fit=crop');
+            /* Image: A dark, stormy, moody sky - fits "Wake up to Reality" */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(5,5,5,1)),
+                        url('https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            height: 85vh; /* Takes up most of the screen */
             display: flex;
             align-items: center;
+            justify-content: center;
             border-bottom: 3px solid var(--primary-red);
-        }
-
-        .hero-text h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--primary-red);
-        }
-
-        /* Card Hover Effects */
-        .anime-card {
-            background-color: var(--card-bg);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: none;
-        }
-        .anime-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
-        }
-
-        /* The Holy Trinity Footer */
-        footer {
-            background-color: #000;
-            border-top: 1px solid #333;
-            padding: 4rem 0;
             position: relative;
         }
 
-        .quote-signature {
-            font-style: italic;
-            color: #888;
-            font-size: 0.9rem;
+        .hero-text {
+            z-index: 2;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+        }
+
+        /* CARD STYLING */
+        .anime-card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .anime-card img {
+            transition: transform 0.5s ease;
+            filter: brightness(0.8); /* Dim images slightly for mood */
+        }
+
+        .anime-card:hover {
+            transform: translateY(-5px); /* Float up effect */
+            border-color: var(--primary-red);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.15);
+        }
+
+        .anime-card:hover img {
+            transform: scale(1.05); /* Slight zoom on hover */
+            filter: brightness(1); /* Brighten up */
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #000;
+            border-top: 1px solid #222;
+            padding: 4rem 0;
+            margin-top: 5rem;
+        }
+
+        .quote-box {
             border-left: 2px solid var(--primary-red);
-            padding-left: 1rem;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        .quote-author {
+            color: var(--primary-red);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top border-bottom border-secondary">
         <div class="container">
-            <a class=" navbar-brand fw-bold text-danger" href="#">ClementVexegon<span class="text-white">ANIME</span></a>
+            <a class="navbar-brand fw-bold text-danger" href="#">
+                CLEMENT<span class="text-white">VEXEGON</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Manga</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Marvel Universes</a></li>
+                    <li class="nav-item"><a class="nav-link active text-white" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="alchemy.html">Alchemy</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="tsukuyomi.html">Tsukuyomi</a></li>
                 </ul>
             </div>
         </div>
@@ -102,84 +123,89 @@
 
     <header class="hero-section text-center text-white">
         <div class="container hero-text">
-            <h1 class="mb-3">Wake Up To Reality</h1>
-            <p class="lead mb-4 w-75 mx-auto">"Nothing ever goes as planned in this accursed world. The longer you live, the more you realize that in this reality only pain, suffering, and futility exist."</p>
-            <a href="tsukuyomi.html" class="btn btn-outline-danger btn-lg px-5">Enter the Infinite Tsukuyomi</a>
+            <h1 class="display-3 fw-bold mb-3 text-uppercase">Wake Up To Reality</h1>
+            <p class="lead mb-4 w-75 mx-auto text-light opacity-75">
+                "Nothing ever goes as planned in this accursed world. The longer you live, the more you realize that in this reality only pain, suffering, and futility exist."
+            </p>
+            <p class="text-danger small fw-bold mb-5">— MADARA UCHIHA</p>
+
+            <a href="tsukuyomi.html" class="btn btn-outline-danger btn-lg px-5 rounded-0">
+                ENTER THE INFINITE TSUKUYOMI
+            </a>
         </div>
     </header>
 
-    <div class="container my-5">
+    <div class="container" style="margin-top: -50px; position: relative; z-index: 3;">
         <div class="row g-4">
+
             <div class="col-md-4">
                 <div class="card anime-card h-100 text-white">
-                    <img src="https://wallpapers.com/images/hd/fullmetal-alchemist-alphonse-elric-armor-h1x9j8m5x9j8m5x9.jpg" class="card-img-top" alt="FMA" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title text-danger">The Law of Exchange</h5>
-                        <p class="card-text">"Humankind cannot gain anything without first giving something in return. To obtain, something of equal value must be lost."</p>
-                        <a href="#" class="btn btn-outline-secondary btn-light">View Alchemy Rules</a>
+                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1000&auto=format&fit=crop" class="card-img-top" alt="Equivalent Exchange" style="height: 250px; object-fit: cover;">
+                    <div class="card-body p-4">
+                        <h5 class="card-title text-warning">The Law of Exchange</h5>
+                        <p class="card-text text-secondary small mb-4">
+                            "Humankind cannot gain anything without first giving something in return. To obtain, something of equal value must be lost."
+                        </p>
+                        <a href="alchemy.html" class="btn btn-sm btn-outline-warning w-100">View The Truth</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="card anime-card h-100 text-white">
-                    <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=1000&auto=format&fit=crop" class="card-img-top" alt="Marvel" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
+                    <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=1000&auto=format&fit=crop" class="card-img-top" alt="Marvel" style="height: 250px; object-fit: cover;">
+                    <div class="card-body p-4">
                         <h5 class="card-title text-danger">Marvel Multiverse</h5>
-                        <p class="card-text">Explore the nexus of realities. From the Avengers to the X-Men, discover where the timelines converge.</p>
-                        <a href="#" class="btn btn-outline-secondary btn-light">Explore Timeline</a>
+                        <p class="card-text text-secondary small mb-4">
+                            Explore the nexus of realities. From the Avengers to the X-Men, discover where the timelines converge.
+                        </p>
+                        <a href="#" class="btn btn-sm btn-outline-danger w-100">Enter Multiverse</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="card anime-card h-100 text-white">
-                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1000&auto=format&fit=crop" class="card-img-top" alt="Anime" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title text-danger">Top Tier Anime</h5>
-                        <p class="card-text">Curated lists of the best series running this season. Don't miss out on the action.</p>
-                        <a href="alchemy.html" class="btn btn-sm btn-light">View Alchemy Rules</a>
-
-
-
+                    <img src=https://images.unsplash.com/photo-1542051841857-5f906991ddb9?q=80&w=1000&auto=format&fit=crop" class="card-img-top" alt="Anime Database" style="height: 250px; object-fit: cover;">
+                    <div class="card-body p-4">
+                        <h5 class="card-title text-info">Top Tier Anime</h5>
+                        <p class="card-text text-secondary small mb-4">
+                            Curated lists of the best series running this season. Don't miss out on the action.
+                        </p>
+                        <a href="top-tier.html" class="btn btn-sm btn-outline-info w-100">Explore The Abyss</a>
                     </div>
                 </div>
             </div>
+
         </div>
-
-        <li class="nav-item"><a class="btn btn-outline-secondary nav-link" href="alchemy.html">Alchemy Rules</a></li>
-<li class="nav-item"><a class="btn btn-outline-secondary nav-link" href="tsukuyomi.html">Infinite Tsukuyomi</a></li>
-
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
     </div>
 
     <footer>
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h4 class="text-white mb-3">Philosophical Foundation</h4>
-                    <div class="quote-signature">
-                        <p>"Each of us lives dependent and bound by our individual knowledge and our awareness. All of that is what we call reality."</p>
-                        <p class="mb-0 text-danger">— Itachi Uchiha</p>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4 class="text-white mb-4" style="font-family: 'Cinzel', serif;">Philosophical Foundation</h4>
+
+                    <div class="quote-box">
+                        <p class="quote-text">"Each of us lives dependent and bound by our individual knowledge and our awareness. All of that is what we call reality. However, both knowledge and awareness are equivocal."</p>
+                        <span class="quote-author">— Itachi Uchiha</span>
+                    </div>
+
+                    <div class="quote-box" style="border-color: var(--gold-accent);">
+                        <p class="quote-text">"Humankind cannot gain anything without first giving something in return. To obtain, something of equal value must be lost."</p>
+                        <span class="quote-author" style="color: var(--gold-accent);">— Alphonse Elric</span>
                     </div>
                 </div>
-                <div class="col-md-6 text-md-end text-secondary mt-4 mt-md-0">
-                    <p class="fs-5 text-white mb-1">Developed by <span class="text-danger fw-bold">Clement Vexegon</span></p>
-                    <p class="small">&copy; 2026. One's reality might be another's illusion.</p>
+
+                <div class="col-md-5 offset-md-1 text-md-end text-secondary d-flex flex-column justify-content-center">
+                    <p class="fs-5 text-white mb-2">Developed by <span class="text-danger fw-bold">Clement Vexegon</span></p>
+                    <p class="small mb-4">Westlands Campus | eMobilis</p>
+                    <p class="small fst-italic opacity-50">&copy; 2026. One's reality might be another's illusion.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
